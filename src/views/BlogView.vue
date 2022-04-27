@@ -1,6 +1,15 @@
 <template>
   <div>
     <div class="page-container">
+      <el-pagination
+        v-model:currentPage="page"
+        v-model:page-size="perPage"
+        layout="prev, pager, next, sizes"
+        :page-sizes="[5, 10, 20, 50]"
+        :total="1000"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      />
     </div>
   </div>
 </template>
