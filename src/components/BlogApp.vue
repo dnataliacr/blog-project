@@ -24,8 +24,19 @@
 
 <script>
   data() {
+      dataApp: [],
+      tags: [],
   },
   mounted() {
+    fetch("https://www.kiterocket.com/wp-json/wp/v2/tags").then((response) =>
+      response.json().then((data) => {
+        data.forEach((item) => {
+          this.tags.push({ id: item.id, name: item.name });
+        });
+      })
+    );
+  },
+  methods: {
     fetchPost() {
       let url = "";
       this.value === ""
