@@ -1,0 +1,39 @@
+<template>
+  <div
+    :style="
+      post.yoast_head_json.og_image[0].url
+        ? `
+
+    height: 100vh;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    overfow-x: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('${post.yoast_head_json.og_image[0].url}')`
+        : ''
+    "
+  >
+    <div class="banner-title">
+      <div class="breadcrum">
+        <ul class="blog-filter">
+          <li class="list go-back"><router-link to="/">Blog </router-link></li>
+          <li>/</li>
+          <li class="user-select">
+            <strong v-show="post.title.rendered">
+              {{ post.title.rendered }}
+            </strong>
+          </li>
+        </ul>
+      </div>
+      <h1 v-show="post.title.rendered">{{ post.title.rendered }}</h1>
+      <div class="p-container">
+        <p v-show="post.excerpt.rendered" v-html="post.excerpt.rendered"></p>
+        <a :href="post.link" target="blank">
+          <el-button color="transparent" class="view-more-btn" style=""
+            >View more</el-button
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
