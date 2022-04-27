@@ -1,0 +1,41 @@
+
+.banner-title {
+  margin: 80px 130px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.banner-title h1 {
+  font-size: 55px;
+  margin-bottom: 30px;
+}
+.p-container {
+  background-color: #ff0066;
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.p-container p {
+  padding-bottom: 1rem;
+}
+.view-more-btn {
+  border: 1px solid #ebf2f6;
+}
+.user-select {
+  cursor: default !important;
+}
+.go-back::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #ff0066;
+  display: block;
+  margin: auto;
+  transition: 0.2s;
+  font-weight: bold;
+}
+.go-back:hover::after {
+  width: 100%;
+}
+
