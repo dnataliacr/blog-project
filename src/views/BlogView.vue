@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { ElPagination, ElSelect, ElOption } from "element-plus";
 export default {
   data() {
     return {
@@ -34,10 +35,19 @@ export default {
         })
       );
     },
+    handleSizeChange() {
+      this.fetchPost();
+    },
+    handleCurrentChange() {
+      this.fetchPost();
+    },
   },
   created() {
     this.fetchPost();
     this.fetchTags();
+  },
+  components: {
+    ElPagination,
   },
 };
 </script>
