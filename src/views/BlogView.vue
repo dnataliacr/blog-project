@@ -5,6 +5,8 @@
   </div>
 </template>
 
+      data: [],
+      tags: [],
     fetchPost() {
       let url;
       this.value === ""
