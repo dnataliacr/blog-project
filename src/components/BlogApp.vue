@@ -26,6 +26,12 @@
   data() {
       dataApp: [],
       tags: [],
+      post: {},
+      currentPage: 5,
+      pageSize: 20,
+      small: false,
+      background: false,
+      disabled: false,
   },
   mounted() {
     fetch("https://www.kiterocket.com/wp-json/wp/v2/tags").then((response) =>
