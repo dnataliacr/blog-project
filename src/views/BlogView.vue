@@ -69,6 +69,7 @@
 
 <script>
 import { ElPagination, ElSelect, ElOption } from "element-plus";
+
 export default {
   data() {
     return {
@@ -78,6 +79,8 @@ export default {
       currentFilter: "",
       page: 1,
       perPage: 20,
+    };
+  },
   methods: {
     fetchPost() {
       let url;
