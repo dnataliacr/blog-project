@@ -25,3 +25,7 @@
         })
       );
     },
+  created() {
+    this.fetchPost();
+    this.fetchTags();
+  },
