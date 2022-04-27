@@ -30,6 +30,30 @@
           <li v-show="value" class="blog-filter-active">{{ value.name }}</li>
         </ul>
 
+        <div class="blog-container">
+          <div v-for="item in data" href="#" class="blog-box" :key="item.id">
+            <div class="blog-img">
+              <img
+                v-show="item.yoast_head_json.og_image[0].url"
+                alt="#"
+                class="blog-img"
+                :src="item.yoast_head_json.og_image[0].url"
+              />
+            </div>
+            <div class="blog-text">
+              <span class="category">{{ item.category }}</span>
+              <strong>{{ item.title.rendered }}</strong>
+              <div class="blog-post-html" v-html="item.excerpt.rendered"></div>
+              <router-link class="view-more" :to="`/post/${item.id}`">
+                <el-button color="#212930" class="el-button-styled" style=""
+                  >View more</el-button
+                ></router-link
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
       <el-pagination
         v-model:currentPage="page"
         v-model:page-size="perPage"
