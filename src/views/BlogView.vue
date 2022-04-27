@@ -1,6 +1,35 @@
 <template>
   <div>
     <div class="page-container">
+      <section id="blog">
+        <div class="filter-container">
+          <el-select
+            v-model="value"
+            @change="filter()"
+            :placeholder="value.name ? value.name : 'Filter'"
+          >
+            <el-option
+              v-for="item in tags"
+              :key="item.id"
+              :label="item.name"
+              :value="item"
+            >
+            </el-option>
+          </el-select>
+        </div>
+        <ul class="blog-filter">
+          <li
+            class="list"
+            :class="value === '' ? 'blog-filter-active' : ''"
+            @click="filterAll"
+          >
+            All
+          </li>
+          <span class="filter-line"> /</span>
+
+          <li v-show="value" class="blog-filter-active">{{ value.name }}</li>
+        </ul>
+
       <el-pagination
         v-model:currentPage="page"
         v-model:page-size="perPage"
