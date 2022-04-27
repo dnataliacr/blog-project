@@ -125,3 +125,8 @@ export default {
   },
 };
 </script>
+
+<style>
+@import "../assets/styles/blog.css";
+@import "../assets/styles/global.css";
+</style>
