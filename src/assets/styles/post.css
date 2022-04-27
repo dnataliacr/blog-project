@@ -39,3 +39,40 @@
   width: 100%;
 }
 
+@media (max-width: 749px) {
+  .banner-title {
+    margin: 50px 100px;
+    width: 80%;
+  }
+}
+@media (max-width: 591px) {
+  .banner-title h1 {
+    font-size: 45px;
+    width: 90%;
+  }
+  .banner-title {
+    margin: 50px 50px;
+    width: 80%;
+  }
+}
+@media (max-width: 591px) {
+  .banner-title h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 452px) {
+  .banner-title {
+    margin: 50px 30px;
+  }
+  .banner-title h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 390px) {
+  .banner-title {
+    margin: 50px 30px;
+  }
+  .banner-title h1 {
+    font-size: 28px;
+  }
+}
