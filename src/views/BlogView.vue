@@ -52,6 +52,8 @@ export default {
       value: "",
       tags: [],
       currentFilter: "",
+      page: 1,
+      perPage: 20,
   methods: {
     fetchPost() {
       let url;
