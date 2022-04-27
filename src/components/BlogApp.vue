@@ -21,3 +21,20 @@
     </section>
   </div>
 </template>
+
+<script>
+  data() {
+  },
+  mounted() {
+    fetchPost() {
+      let url = "";
+      this.value === ""
+        ? (url = "posts?_embed=1&per_page=20")
+        : (url = "posts?tags=" + this.value);
+      fetch("https://www.kiterocket.com/wp-json/wp/v2/" + url)
+        .then((response) => response.json())
+        .then((data) => {
+          this.dataApp = data;
+        });
+    },
+</script>
