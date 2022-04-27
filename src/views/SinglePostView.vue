@@ -37,3 +37,27 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      post: {},
+    };
+  },
+  created() {
+    this.fetchPost();
+  },
+  methods: {
+    fetchPost() {
+      const id = this.$route.params.id;
+      fetch(`https://www.kiterocket.com/wp-json/wp/v2/posts/${id}`).then(
+        (response) =>
+          response.json().then((data) => {
+            this.post = data;
+          })
+      );
+    },
+  },
+};
+</script>
