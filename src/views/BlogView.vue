@@ -73,10 +73,18 @@ export default {
         })
       );
     },
+    filter() {
+      this.currentFilter = this.value;
+      this.fetchPost();
+    },
     handleSizeChange() {
       this.fetchPost();
     },
     handleCurrentChange() {
+      this.fetchPost();
+    },
+    filterAll() {
+      this.value = "";
       this.fetchPost();
     },
   },
