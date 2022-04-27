@@ -5,8 +5,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
       data: [],
+      value: "",
       tags: [],
+      currentFilter: "",
+  methods: {
     fetchPost() {
       let url;
       this.value === ""
@@ -27,7 +34,10 @@
         })
       );
     },
+  },
   created() {
     this.fetchPost();
     this.fetchTags();
   },
+};
+</script>
